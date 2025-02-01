@@ -103,17 +103,18 @@ print(daily_avg['precio_7d'])
 
 # #6 Almacenamiento de Resultados
 
-# for _, row in daily_avg.iterrows():
-#     registro = PrecioEnergia(
-#         fecha=row['fecha'],
-#         precio_promedio=row['precio'],
-#         precio_7d=row['precio_7d']
-#     )
-#     session.add(registro)
+for _, row in daily_avg.iterrows():
+     registro = PrecioEnergia(
+         fecha=row['fecha'],
+         precio_promedio=row['precio'],
+         precio_7d=row['precio_7d']
+    )
+
+session.add(registro)
 
 
-# session.commit()
-# session.close()
+session.commit()
+session.close()
 
 
 plt.figure(figsize=(12, 6))
